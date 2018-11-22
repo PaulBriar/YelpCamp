@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/PaulBriar/YelpCamp/issues"
   },
-  "homepage": "https://github.com/PaulBriar/YelpCamp#readme"
+  "homepage": "https://github.com/PaulBriar/YelpCamp#readme",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.4",
+    "nodemon": "^1.18.6"
+  }
 }
