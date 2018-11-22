@@ -1,0 +1,19 @@
+{
+  "name": "yelpcamp",
+  "version": "1.0.0",
+  "description": "Yelp for Camping!",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PaulBriar/YelpCamp.git"
+  },
+  "author": "Paul Briar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/PaulBriar/YelpCamp/issues"
+  },
+  "homepage": "https://github.com/PaulBriar/YelpCamp#readme"
+}
