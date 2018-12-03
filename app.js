@@ -3,14 +3,16 @@ const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const Campground = require("./models/campground");
+const Comment = require("./models/comment");
 const seedDB = require("./seeds");
 const port = 3000;
 
-seedDB();
+
 mongoose.connect("mongodb://localhost/yelp_camp");
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
-
+app.use(express.static(__dirname + "/public"));
+seedDB();
 app.get("/", (req, res) => res.render("landing"));
 
 //Index Route - List all campgrounds
@@ -64,5 +66,25 @@ app.get("/campgrounds/:id/comments/new", (req, res) => {
     }
   });
 });
+
+app.post("/campgrounds/:id/comments", (req, res) => {
+  Campground.findById(req.params.id, (err, campground) => {
+    if(err) {
+      console.log(err);
+      res.redirect("/campgrounds");
+    } else {
+      Comment.create(req.body.comment, (err, comment) => {
+        if(err) {
+          console.log(err);
+        } else {
+          campground.comments.push(comment);
+          campground.save();
+          res.redirect("/campgrounds/" + campground._id);
+        }
+      });
+    }
+  });
+
+})
 
 app.listen(port, () => console.log(`We are live on port ${port}`));
