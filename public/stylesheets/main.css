@@ -2,6 +2,6 @@
   margin: 20px;
 }
 
-.card {
-  padding: 10px;
+.btn.btn-danger {
+  margin-left: 5px;
 }
