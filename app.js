@@ -66,4 +66,4 @@ app.use("/campgrounds/:id/comments", commentRoutes);
 
 
 
-app.listen(process.env.PORT, process.env.IP, () => console.log(`We are live server`));
+app.listen(3000, () => console.log(`We are live server`));
