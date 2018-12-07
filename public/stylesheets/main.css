@@ -1,7 +1,18 @@
 .container {
   margin: 20px;
+  width: 100%;
+}
+
+.jumbotron {
+  text-align: center;
+  margin-top: 20px;
 }
 
 .btn.btn-danger {
   margin-left: 5px;
+}
+
+#index-img {
+  height: 200px;
+  width: 100%;
 }
