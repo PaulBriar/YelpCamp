@@ -17,7 +17,22 @@ let commentRoutes = require("./routes/comments"),
     indexRoutes = require("./routes/index");
 
 
-mongoose.connect("mongodb://localhost/yelp_camp", { useNewUrlParser: true });
+//Mlab Connection
+var mongodbUri ='mongodb://@ds127954.mlab.com:27954/yelpcamp7';
+mongoose.connect(mongodbUri, {
+  useNewUrlParser: true,
+  auth: {
+    user: 'paul',
+    password: 'William18'
+  }
+});
+var conn = mongoose.connection;
+conn.on('error', console.error.bind(console, 'connection error:'));
+
+conn.once('open', () =>{
+ console.log('connected to database')
+});
+
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 app.use(express.static(__dirname + "/public"));
