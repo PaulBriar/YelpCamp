@@ -59,11 +59,9 @@ app.use( (req, res, next) => {
   next();
 });
 
-
 app.use(indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-
-
-app.listen(process.env.PORT, process.env.IP, () => console.log(`We are live server`));
+//app.listen(process.env.PORT, process.env.IP, () => console.log(`Server is live`));
+app.listen(3000, () => console.log('Live'));
