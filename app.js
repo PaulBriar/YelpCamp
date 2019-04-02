@@ -63,4 +63,5 @@ app.use(indexRoutes);
 app.use("/campgrounds", campgroundRoutes);
 app.use("/campgrounds/:id/comments", commentRoutes);
 
-app.listen(process.env.PORT, process.env.IP, () => console.log(`Server is live`));
+app.listen(port, () => console.log('Local is live'));
+//app.listen(process.env.PORT, process.env.IP, () => console.log(`Server is live`));
